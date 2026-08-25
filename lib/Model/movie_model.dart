@@ -2,23 +2,23 @@
 
 class MovieModel {
   MovieModel({
-      Data? data,}){
+      Data data,}){
     _data = data;
 }
 
   MovieModel.fromJson(dynamic json) {
     _data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
-  Data? _data;
-MovieModel copyWith({  Data? data,
+  Data _data;
+MovieModel copyWith({  Data data,
 }) => MovieModel(  data: data ?? _data,
 );
-  Data? get data => _data;
+  Data get data => _data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (_data != null) {
-      map['data'] = _data?.toJson();
+      map['data'] = _data.toJson();
     }
     return map;
   }
@@ -29,23 +29,23 @@ MovieModel copyWith({  Data? data,
 
 class Data {
   Data({
-      MainSearch? mainSearch,}){
+      MainSearch mainSearch,}){
     _mainSearch = mainSearch;
 }
 
   Data.fromJson(dynamic json) {
     _mainSearch = json['mainSearch'] != null ? MainSearch.fromJson(json['mainSearch']) : null;
   }
-  MainSearch? _mainSearch;
-Data copyWith({  MainSearch? mainSearch,
+  MainSearch _mainSearch;
+Data copyWith({  MainSearch mainSearch,
 }) => Data(  mainSearch: mainSearch ?? _mainSearch,
 );
-  MainSearch? get mainSearch => _mainSearch;
+  MainSearch get mainSearch => _mainSearch;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (_mainSearch != null) {
-      map['mainSearch'] = _mainSearch?.toJson();
+      map['mainSearch'] = _mainSearch.toJson();
     }
     return map;
   }
@@ -56,7 +56,7 @@ Data copyWith({  MainSearch? mainSearch,
 
 class MainSearch {
   MainSearch({
-      List<Edges>? edges,}){
+      List<Edges> edges,}){
     _edges = edges;
 }
 
@@ -64,20 +64,20 @@ class MainSearch {
     if (json['edges'] != null) {
       _edges = [];
       json['edges'].forEach((v) {
-        _edges?.add(Edges.fromJson(v));
+        _edges.add(Edges.fromJson(v));
       });
     }
   }
-  List<Edges>? _edges;
-MainSearch copyWith({  List<Edges>? edges,
+  List<Edges> _edges;
+MainSearch copyWith({  List<Edges> edges,
 }) => MainSearch(  edges: edges ?? _edges,
 );
-  List<Edges>? get edges => _edges;
+  List<Edges> get edges => _edges;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (_edges != null) {
-      map['edges'] = _edges?.map((v) => v.toJson()).toList();
+      map['edges'] = _edges.map((v) => v.toJson()).toList();
     }
     return map;
   }
@@ -88,23 +88,23 @@ MainSearch copyWith({  List<Edges>? edges,
 
 class Edges {
   Edges({
-      Node? node,}){
+      Node node,}){
     _node = node;
 }
 
   Edges.fromJson(dynamic json) {
     _node = json['node'] != null ? Node.fromJson(json['node']) : null;
   }
-  Node? _node;
-Edges copyWith({  Node? node,
+  Node _node;
+Edges copyWith({  Node node,
 }) => Edges(  node: node ?? _node,
 );
-  Node? get node => _node;
+  Node get node => _node;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (_node != null) {
-      map['node'] = _node?.toJson();
+      map['node'] = _node.toJson();
     }
     return map;
   }
@@ -115,23 +115,23 @@ Edges copyWith({  Node? node,
 
 class Node {
   Node({
-      Entity? entity,}){
+      Entity entity,}){
     _entity = entity;
 }
 
   Node.fromJson(dynamic json) {
     _entity = json['entity'] != null ? Entity.fromJson(json['entity']) : null;
   }
-  Entity? _entity;
-Node copyWith({  Entity? entity,
+  Entity _entity;
+Node copyWith({  Entity entity,
 }) => Node(  entity: entity ?? _entity,
 );
-  Entity? get entity => _entity;
+  Entity get entity => _entity;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (_entity != null) {
-      map['entity'] = _entity?.toJson();
+      map['entity'] = _entity.toJson();
     }
     return map;
   }
@@ -152,17 +152,17 @@ Node copyWith({  Entity? entity,
 
 class Entity {
   Entity({
-      String? typename, 
-      String? id, 
-      TitleText? titleText, 
-      OriginalTitleText? originalTitleText, 
-      ReleaseYear? releaseYear, 
-      ReleaseDate? releaseDate, 
-      TitleType? titleType, 
-      PrimaryImage? primaryImage, 
+      String typename, 
+      String id, 
+      TitleText titleText, 
+      OriginalTitleText originalTitleText, 
+      ReleaseYear releaseYear, 
+      ReleaseDate releaseDate, 
+      TitleType titleType, 
+      PrimaryImage primaryImage, 
       dynamic episodes, 
       dynamic series, 
-      List<PrincipalCredits>? principalCredits,}){
+      List<PrincipalCredits> principalCredits,}){
     _typename = typename;
     _id = id;
     _titleText = titleText;
@@ -190,32 +190,32 @@ class Entity {
     if (json['principalCredits'] != null) {
       _principalCredits = [];
       json['principalCredits'].forEach((v) {
-        _principalCredits?.add(PrincipalCredits.fromJson(v));
+        _principalCredits.add(PrincipalCredits.fromJson(v));
       });
     }
   }
-  String? _typename;
-  String? _id;
-  TitleText? _titleText;
-  OriginalTitleText? _originalTitleText;
-  ReleaseYear? _releaseYear;
-  ReleaseDate? _releaseDate;
-  TitleType? _titleType;
-  PrimaryImage? _primaryImage;
+  String _typename;
+  String _id;
+  TitleText _titleText;
+  OriginalTitleText _originalTitleText;
+  ReleaseYear _releaseYear;
+  ReleaseDate _releaseDate;
+  TitleType _titleType;
+  PrimaryImage _primaryImage;
   dynamic _episodes;
   dynamic _series;
-  List<PrincipalCredits>? _principalCredits;
-Entity copyWith({  String? typename,
-  String? id,
-  TitleText? titleText,
-  OriginalTitleText? originalTitleText,
-  ReleaseYear? releaseYear,
-  ReleaseDate? releaseDate,
-  TitleType? titleType,
-  PrimaryImage? primaryImage,
+  List<PrincipalCredits> _principalCredits;
+Entity copyWith({  String typename,
+  String id,
+  TitleText titleText,
+  OriginalTitleText originalTitleText,
+  ReleaseYear releaseYear,
+  ReleaseDate releaseDate,
+  TitleType titleType,
+  PrimaryImage primaryImage,
   dynamic episodes,
   dynamic series,
-  List<PrincipalCredits>? principalCredits,
+  List<PrincipalCredits> principalCredits,
 }) => Entity(  typename: typename ?? _typename,
   id: id ?? _id,
   titleText: titleText ?? _titleText,
@@ -228,44 +228,44 @@ Entity copyWith({  String? typename,
   series: series ?? _series,
   principalCredits: principalCredits ?? _principalCredits,
 );
-  String? get typename => _typename;
-  String? get id => _id;
-  TitleText? get titleText => _titleText;
-  OriginalTitleText? get originalTitleText => _originalTitleText;
-  ReleaseYear? get releaseYear => _releaseYear;
-  ReleaseDate? get releaseDate => _releaseDate;
-  TitleType? get titleType => _titleType;
-  PrimaryImage? get primaryImage => _primaryImage;
+  String get typename => _typename;
+  String get id => _id;
+  TitleText get titleText => _titleText;
+  OriginalTitleText get originalTitleText => _originalTitleText;
+  ReleaseYear get releaseYear => _releaseYear;
+  ReleaseDate get releaseDate => _releaseDate;
+  TitleType get titleType => _titleType;
+  PrimaryImage get primaryImage => _primaryImage;
   dynamic get episodes => _episodes;
   dynamic get series => _series;
-  List<PrincipalCredits>? get principalCredits => _principalCredits;
+  List<PrincipalCredits> get principalCredits => _principalCredits;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['__typename'] = _typename;
     map['id'] = _id;
     if (_titleText != null) {
-      map['titleText'] = _titleText?.toJson();
+      map['titleText'] = _titleText.toJson();
     }
     if (_originalTitleText != null) {
-      map['originalTitleText'] = _originalTitleText?.toJson();
+      map['originalTitleText'] = _originalTitleText.toJson();
     }
     if (_releaseYear != null) {
-      map['releaseYear'] = _releaseYear?.toJson();
+      map['releaseYear'] = _releaseYear.toJson();
     }
     if (_releaseDate != null) {
-      map['releaseDate'] = _releaseDate?.toJson();
+      map['releaseDate'] = _releaseDate.toJson();
     }
     if (_titleType != null) {
-      map['titleType'] = _titleType?.toJson();
+      map['titleType'] = _titleType.toJson();
     }
     if (_primaryImage != null) {
-      map['primaryImage'] = _primaryImage?.toJson();
+      map['primaryImage'] = _primaryImage.toJson();
     }
     map['episodes'] = _episodes;
     map['series'] = _series;
     if (_principalCredits != null) {
-      map['principalCredits'] = _principalCredits?.map((v) => v.toJson()).toList();
+      map['principalCredits'] = _principalCredits.map((v) => v.toJson()).toList();
     }
     return map;
   }
@@ -276,7 +276,7 @@ Entity copyWith({  String? typename,
 
 class PrincipalCredits {
   PrincipalCredits({
-      List<Credits>? credits,}){
+      List<Credits> credits,}){
     _credits = credits;
 }
 
@@ -284,20 +284,20 @@ class PrincipalCredits {
     if (json['credits'] != null) {
       _credits = [];
       json['credits'].forEach((v) {
-        _credits?.add(Credits.fromJson(v));
+        _credits.add(Credits.fromJson(v));
       });
     }
   }
-  List<Credits>? _credits;
-PrincipalCredits copyWith({  List<Credits>? credits,
+  List<Credits> _credits;
+PrincipalCredits copyWith({  List<Credits> credits,
 }) => PrincipalCredits(  credits: credits ?? _credits,
 );
-  List<Credits>? get credits => _credits;
+  List<Credits> get credits => _credits;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (_credits != null) {
-      map['credits'] = _credits?.map((v) => v.toJson()).toList();
+      map['credits'] = _credits.map((v) => v.toJson()).toList();
     }
     return map;
   }
@@ -308,23 +308,23 @@ PrincipalCredits copyWith({  List<Credits>? credits,
 
 class Credits {
   Credits({
-      Name? name,}){
+      Name name,}){
     _name = name;
 }
 
   Credits.fromJson(dynamic json) {
     _name = json['name'] != null ? Name.fromJson(json['name']) : null;
   }
-  Name? _name;
-Credits copyWith({  Name? name,
+  Name _name;
+Credits copyWith({  Name name,
 }) => Credits(  name: name ?? _name,
 );
-  Name? get name => _name;
+  Name get name => _name;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (_name != null) {
-      map['name'] = _name?.toJson();
+      map['name'] = _name.toJson();
     }
     return map;
   }
@@ -338,10 +338,10 @@ Credits copyWith({  Name? name,
 
 class Name {
   Name({
-      String? typename, 
-      String? id, 
-      NameText? nameText, 
-      PrimaryImage? primaryImage,}){
+      String typename, 
+      String id, 
+      NameText nameText, 
+      PrimaryImage primaryImage,}){
     _typename = typename;
     _id = id;
     _nameText = nameText;
@@ -354,33 +354,33 @@ class Name {
     _nameText = json['nameText'] != null ? NameText.fromJson(json['nameText']) : null;
     _primaryImage = json['primaryImage'] != null ? PrimaryImage.fromJson(json['primaryImage']) : null;
   }
-  String? _typename;
-  String? _id;
-  NameText? _nameText;
-  PrimaryImage? _primaryImage;
-Name copyWith({  String? typename,
-  String? id,
-  NameText? nameText,
-  PrimaryImage? primaryImage,
+  String _typename;
+  String _id;
+  NameText _nameText;
+  PrimaryImage _primaryImage;
+Name copyWith({  String typename,
+  String id,
+  NameText nameText,
+  PrimaryImage primaryImage,
 }) => Name(  typename: typename ?? _typename,
   id: id ?? _id,
   nameText: nameText ?? _nameText,
   primaryImage: primaryImage ?? _primaryImage,
 );
-  String? get typename => _typename;
-  String? get id => _id;
-  NameText? get nameText => _nameText;
-  PrimaryImage? get primaryImage => _primaryImage;
+  String get typename => _typename;
+  String get id => _id;
+  NameText get nameText => _nameText;
+  PrimaryImage get primaryImage => _primaryImage;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['__typename'] = _typename;
     map['id'] = _id;
     if (_nameText != null) {
-      map['nameText'] = _nameText?.toJson();
+      map['nameText'] = _nameText.toJson();
     }
     if (_primaryImage != null) {
-      map['primaryImage'] = _primaryImage?.toJson();
+      map['primaryImage'] = _primaryImage.toJson();
     }
     return map;
   }
@@ -395,11 +395,11 @@ Name copyWith({  String? typename,
 
 class PrimaryImage {
   PrimaryImage({
-      String? typename, 
-      String? id, 
-      String? url, 
-      num? height, 
-      num? width,}){
+      String typename, 
+      String id, 
+      String url, 
+      num height, 
+      num width,}){
     _typename = typename;
     _id = id;
     _url = url;
@@ -414,27 +414,27 @@ class PrimaryImage {
     _height = json['height'];
     _width = json['width'];
   }
-  String? _typename;
-  String? _id;
-  String? _url;
-  num? _height;
-  num? _width;
-PrimaryImage copyWith({  String? typename,
-  String? id,
-  String? url,
-  num? height,
-  num? width,
+  String _typename;
+  String _id;
+  String _url;
+  num _height;
+  num _width;
+PrimaryImage copyWith({  String typename,
+  String id,
+  String url,
+  num height,
+  num width,
 }) => PrimaryImage(  typename: typename ?? _typename,
   id: id ?? _id,
   url: url ?? _url,
   height: height ?? _height,
   width: width ?? _width,
 );
-  String? get typename => _typename;
-  String? get id => _id;
-  String? get url => _url;
-  num? get height => _height;
-  num? get width => _width;
+  String get typename => _typename;
+  String get id => _id;
+  String get url => _url;
+  num get height => _height;
+  num get width => _width;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -452,18 +452,18 @@ PrimaryImage copyWith({  String? typename,
 
 class NameText {
   NameText({
-      String? text,}){
+      String text,}){
     _text = text;
 }
 
   NameText.fromJson(dynamic json) {
     _text = json['text'];
   }
-  String? _text;
-NameText copyWith({  String? text,
+  String _text;
+NameText copyWith({  String text,
 }) => NameText(  text: text ?? _text,
 );
-  String? get text => _text;
+  String get text => _text;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -481,11 +481,11 @@ NameText copyWith({  String? text,
 
 class PrimaryImage {
   PrimaryImage({
-      String? typename, 
-      String? id, 
-      String? url, 
-      num? height, 
-      num? width,}){
+      String typename, 
+      String id, 
+      String url, 
+      num height, 
+      num width,}){
     _typename = typename;
     _id = id;
     _url = url;
@@ -500,27 +500,27 @@ class PrimaryImage {
     _height = json['height'];
     _width = json['width'];
   }
-  String? _typename;
-  String? _id;
-  String? _url;
-  num? _height;
-  num? _width;
-PrimaryImage copyWith({  String? typename,
-  String? id,
-  String? url,
-  num? height,
-  num? width,
+  String _typename;
+  String _id;
+  String _url;
+  num _height;
+  num _width;
+PrimaryImage copyWith({  String typename,
+  String id,
+  String url,
+  num height,
+  num width,
 }) => PrimaryImage(  typename: typename ?? _typename,
   id: id ?? _id,
   url: url ?? _url,
   height: height ?? _height,
   width: width ?? _width,
 );
-  String? get typename => _typename;
-  String? get id => _id;
-  String? get url => _url;
-  num? get height => _height;
-  num? get width => _width;
+  String get typename => _typename;
+  String get id => _id;
+  String get url => _url;
+  num get height => _height;
+  num get width => _width;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -545,14 +545,14 @@ PrimaryImage copyWith({  String? typename,
 
 class TitleType {
   TitleType({
-      String? typename, 
-      String? id, 
-      String? text, 
-      List<Categories>? categories, 
-      bool? canHaveEpisodes, 
-      bool? isEpisode, 
-      bool? isSeries, 
-      DisplayableProperty? displayableProperty,}){
+      String typename, 
+      String id, 
+      String text, 
+      List<Categories> categories, 
+      bool canHaveEpisodes, 
+      bool isEpisode, 
+      bool isSeries, 
+      DisplayableProperty displayableProperty,}){
     _typename = typename;
     _id = id;
     _text = text;
@@ -570,7 +570,7 @@ class TitleType {
     if (json['categories'] != null) {
       _categories = [];
       json['categories'].forEach((v) {
-        _categories?.add(Categories.fromJson(v));
+        _categories.add(Categories.fromJson(v));
       });
     }
     _canHaveEpisodes = json['canHaveEpisodes'];
@@ -578,22 +578,22 @@ class TitleType {
     _isSeries = json['isSeries'];
     _displayableProperty = json['displayableProperty'] != null ? DisplayableProperty.fromJson(json['displayableProperty']) : null;
   }
-  String? _typename;
-  String? _id;
-  String? _text;
-  List<Categories>? _categories;
-  bool? _canHaveEpisodes;
-  bool? _isEpisode;
-  bool? _isSeries;
-  DisplayableProperty? _displayableProperty;
-TitleType copyWith({  String? typename,
-  String? id,
-  String? text,
-  List<Categories>? categories,
-  bool? canHaveEpisodes,
-  bool? isEpisode,
-  bool? isSeries,
-  DisplayableProperty? displayableProperty,
+  String _typename;
+  String _id;
+  String _text;
+  List<Categories> _categories;
+  bool _canHaveEpisodes;
+  bool _isEpisode;
+  bool _isSeries;
+  DisplayableProperty _displayableProperty;
+TitleType copyWith({  String typename,
+  String id,
+  String text,
+  List<Categories> categories,
+  bool canHaveEpisodes,
+  bool isEpisode,
+  bool isSeries,
+  DisplayableProperty displayableProperty,
 }) => TitleType(  typename: typename ?? _typename,
   id: id ?? _id,
   text: text ?? _text,
@@ -603,14 +603,14 @@ TitleType copyWith({  String? typename,
   isSeries: isSeries ?? _isSeries,
   displayableProperty: displayableProperty ?? _displayableProperty,
 );
-  String? get typename => _typename;
-  String? get id => _id;
-  String? get text => _text;
-  List<Categories>? get categories => _categories;
-  bool? get canHaveEpisodes => _canHaveEpisodes;
-  bool? get isEpisode => _isEpisode;
-  bool? get isSeries => _isSeries;
-  DisplayableProperty? get displayableProperty => _displayableProperty;
+  String get typename => _typename;
+  String get id => _id;
+  String get text => _text;
+  List<Categories> get categories => _categories;
+  bool get canHaveEpisodes => _canHaveEpisodes;
+  bool get isEpisode => _isEpisode;
+  bool get isSeries => _isSeries;
+  DisplayableProperty get displayableProperty => _displayableProperty;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -618,13 +618,13 @@ TitleType copyWith({  String? typename,
     map['id'] = _id;
     map['text'] = _text;
     if (_categories != null) {
-      map['categories'] = _categories?.map((v) => v.toJson()).toList();
+      map['categories'] = _categories.map((v) => v.toJson()).toList();
     }
     map['canHaveEpisodes'] = _canHaveEpisodes;
     map['isEpisode'] = _isEpisode;
     map['isSeries'] = _isSeries;
     if (_displayableProperty != null) {
-      map['displayableProperty'] = _displayableProperty?.toJson();
+      map['displayableProperty'] = _displayableProperty.toJson();
     }
     return map;
   }
@@ -635,23 +635,23 @@ TitleType copyWith({  String? typename,
 
 class DisplayableProperty {
   DisplayableProperty({
-      Value? value,}){
+      Value value,}){
     _value = value;
 }
 
   DisplayableProperty.fromJson(dynamic json) {
     _value = json['value'] != null ? Value.fromJson(json['value']) : null;
   }
-  Value? _value;
-DisplayableProperty copyWith({  Value? value,
+  Value _value;
+DisplayableProperty copyWith({  Value value,
 }) => DisplayableProperty(  value: value ?? _value,
 );
-  Value? get value => _value;
+  Value get value => _value;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     if (_value != null) {
-      map['value'] = _value?.toJson();
+      map['value'] = _value.toJson();
     }
     return map;
   }
@@ -662,18 +662,18 @@ DisplayableProperty copyWith({  Value? value,
 
 class Value {
   Value({
-      String? plainText,}){
+      String plainText,}){
     _plainText = plainText;
 }
 
   Value.fromJson(dynamic json) {
     _plainText = json['plainText'];
   }
-  String? _plainText;
-Value copyWith({  String? plainText,
+  String _plainText;
+Value copyWith({  String plainText,
 }) => Value(  plainText: plainText ?? _plainText,
 );
-  String? get plainText => _plainText;
+  String get plainText => _plainText;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -689,9 +689,9 @@ Value copyWith({  String? plainText,
 
 class Categories {
   Categories({
-      String? id, 
-      String? text, 
-      String? value,}){
+      String id, 
+      String text, 
+      String value,}){
     _id = id;
     _text = text;
     _value = value;
@@ -702,19 +702,19 @@ class Categories {
     _text = json['text'];
     _value = json['value'];
   }
-  String? _id;
-  String? _text;
-  String? _value;
-Categories copyWith({  String? id,
-  String? text,
-  String? value,
+  String _id;
+  String _text;
+  String _value;
+Categories copyWith({  String id,
+  String text,
+  String value,
 }) => Categories(  id: id ?? _id,
   text: text ?? _text,
   value: value ?? _value,
 );
-  String? get id => _id;
-  String? get text => _text;
-  String? get value => _value;
+  String get id => _id;
+  String get text => _text;
+  String get value => _value;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -737,14 +737,14 @@ Categories copyWith({  String? id,
 
 class ReleaseDate {
   ReleaseDate({
-      String? typename, 
-      num? month, 
-      num? day, 
-      num? year, 
-      Country? country, 
+      String typename, 
+      num month, 
+      num day, 
+      num year, 
+      Country country, 
       dynamic restriction, 
-      List<dynamic>? attributes, 
-      DisplayableProperty? displayableProperty,}){
+      List<dynamic> attributes, 
+      DisplayableProperty displayableProperty,}){
     _typename = typename;
     _month = month;
     _day = day;
@@ -765,27 +765,27 @@ class ReleaseDate {
     if (json['attributes'] != null) {
       _attributes = [];
       json['attributes'].forEach((v) {
-        _attributes?.add(Dynamic.fromJson(v));
+        _attributes.add(Dynamic.fromJson(v));
       });
     }
     _displayableProperty = json['displayableProperty'] != null ? DisplayableProperty.fromJson(json['displayableProperty']) : null;
   }
-  String? _typename;
-  num? _month;
-  num? _day;
-  num? _year;
-  Country? _country;
+  String _typename;
+  num _month;
+  num _day;
+  num _year;
+  Country _country;
   dynamic _restriction;
-  List<dynamic>? _attributes;
-  DisplayableProperty? _displayableProperty;
-ReleaseDate copyWith({  String? typename,
-  num? month,
-  num? day,
-  num? year,
-  Country? country,
+  List<dynamic> _attributes;
+  DisplayableProperty _displayableProperty;
+ReleaseDate copyWith({  String typename,
+  num month,
+  num day,
+  num year,
+  Country country,
   dynamic restriction,
-  List<dynamic>? attributes,
-  DisplayableProperty? displayableProperty,
+  List<dynamic> attributes,
+  DisplayableProperty displayableProperty,
 }) => ReleaseDate(  typename: typename ?? _typename,
   month: month ?? _month,
   day: day ?? _day,
@@ -795,14 +795,14 @@ ReleaseDate copyWith({  String? typename,
   attributes: attributes ?? _attributes,
   displayableProperty: displayableProperty ?? _displayableProperty,
 );
-  String? get typename => _typename;
-  num? get month => _month;
-  num? get day => _day;
-  num? get year => _year;
-  Country? get country => _country;
+  String get typename => _typename;
+  num get month => _month;
+  num get day => _day;
+  num get year => _year;
+  Country get country => _country;
   dynamic get restriction => _restriction;
-  List<dynamic>? get attributes => _attributes;
-  DisplayableProperty? get displayableProperty => _displayableProperty;
+  List<dynamic> get attributes => _attributes;
+  DisplayableProperty get displayableProperty => _displayableProperty;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -811,14 +811,14 @@ ReleaseDate copyWith({  String? typename,
     map['day'] = _day;
     map['year'] = _year;
     if (_country != null) {
-      map['country'] = _country?.toJson();
+      map['country'] = _country.toJson();
     }
     map['restriction'] = _restriction;
     if (_attributes != null) {
-      map['attributes'] = _attributes?.map((v) => v.toJson()).toList();
+      map['attributes'] = _attributes.map((v) => v.toJson()).toList();
     }
     if (_displayableProperty != null) {
-      map['displayableProperty'] = _displayableProperty?.toJson();
+      map['displayableProperty'] = _displayableProperty.toJson();
     }
     return map;
   }
@@ -854,18 +854,18 @@ DisplayableProperty copyWith({  dynamic qualifiersInMarkdownList,
 
 class Country {
   Country({
-      String? id,}){
+      String id,}){
     _id = id;
 }
 
   Country.fromJson(dynamic json) {
     _id = json['id'];
   }
-  String? _id;
-Country copyWith({  String? id,
+  String _id;
+Country copyWith({  String id,
 }) => Country(  id: id ?? _id,
 );
-  String? get id => _id;
+  String get id => _id;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -881,8 +881,8 @@ Country copyWith({  String? id,
 
 class ReleaseYear {
   ReleaseYear({
-      String? typename, 
-      num? year, 
+      String typename, 
+      num year, 
       dynamic endYear,}){
     _typename = typename;
     _year = year;
@@ -894,18 +894,18 @@ class ReleaseYear {
     _year = json['year'];
     _endYear = json['endYear'];
   }
-  String? _typename;
-  num? _year;
+  String _typename;
+  num _year;
   dynamic _endYear;
-ReleaseYear copyWith({  String? typename,
-  num? year,
+ReleaseYear copyWith({  String typename,
+  num year,
   dynamic endYear,
 }) => ReleaseYear(  typename: typename ?? _typename,
   year: year ?? _year,
   endYear: endYear ?? _endYear,
 );
-  String? get typename => _typename;
-  num? get year => _year;
+  String get typename => _typename;
+  num get year => _year;
   dynamic get endYear => _endYear;
 
   Map<String, dynamic> toJson() {
@@ -923,8 +923,8 @@ ReleaseYear copyWith({  String? typename,
 
 class OriginalTitleText {
   OriginalTitleText({
-      String? text, 
-      bool? isOriginalTitle,}){
+      String text, 
+      bool isOriginalTitle,}){
     _text = text;
     _isOriginalTitle = isOriginalTitle;
 }
@@ -933,15 +933,15 @@ class OriginalTitleText {
     _text = json['text'];
     _isOriginalTitle = json['isOriginalTitle'];
   }
-  String? _text;
-  bool? _isOriginalTitle;
-OriginalTitleText copyWith({  String? text,
-  bool? isOriginalTitle,
+  String _text;
+  bool _isOriginalTitle;
+OriginalTitleText copyWith({  String text,
+  bool isOriginalTitle,
 }) => OriginalTitleText(  text: text ?? _text,
   isOriginalTitle: isOriginalTitle ?? _isOriginalTitle,
 );
-  String? get text => _text;
-  bool? get isOriginalTitle => _isOriginalTitle;
+  String get text => _text;
+  bool get isOriginalTitle => _isOriginalTitle;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -957,8 +957,8 @@ OriginalTitleText copyWith({  String? text,
 
 class TitleText {
   TitleText({
-      String? text, 
-      bool? isOriginalTitle,}){
+      String text, 
+      bool isOriginalTitle,}){
     _text = text;
     _isOriginalTitle = isOriginalTitle;
 }
@@ -967,15 +967,15 @@ class TitleText {
     _text = json['text'];
     _isOriginalTitle = json['isOriginalTitle'];
   }
-  String? _text;
-  bool? _isOriginalTitle;
-TitleText copyWith({  String? text,
-  bool? isOriginalTitle,
+  String _text;
+  bool _isOriginalTitle;
+TitleText copyWith({  String text,
+  bool isOriginalTitle,
 }) => TitleText(  text: text ?? _text,
   isOriginalTitle: isOriginalTitle ?? _isOriginalTitle,
 );
-  String? get text => _text;
-  bool? get isOriginalTitle => _isOriginalTitle;
+  String get text => _text;
+  bool get isOriginalTitle => _isOriginalTitle;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
