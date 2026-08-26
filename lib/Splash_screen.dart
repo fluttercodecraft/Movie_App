@@ -14,71 +14,39 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-
-    Timer(const Duration(seconds: 3), () {
-      if (mounted) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
-        );
-      }
+    Timer(const Duration(seconds: 2), () {
+      if (!mounted) return;
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
+      );
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0D0D0D),
+      backgroundColor: const Color(0xFF121212),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Movie Icon
-            Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                color: const Color(0xFFE50914),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: const Icon(
-                Icons.movie_rounded,
-                color: Colors.white,
-                size: 55,
-              ),
+          children: const [
+            Icon(
+              Icons.movie_creation_rounded,
+              color: Colors.redAccent,
+              size: 90,
             ),
-
-            const SizedBox(height: 25),
-
-            // App Name
-            const Text(
-              'MovieHub',
+            SizedBox(height: 20),
+            Text(
+              'CineSearch',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 32,
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
-                letterSpacing: 1,
+                letterSpacing: 1.2,
               ),
             ),
-
-            const SizedBox(height: 8),
-
-            const Text(
-              'Discover your next favorite movie',
-              style: TextStyle(color: Colors.white60, fontSize: 14),
-            ),
-
-            const SizedBox(height: 35),
-
-            // Loading Indicator
-            const SizedBox(
-              height: 25,
-              width: 25,
-              child: CircularProgressIndicator(
-                strokeWidth: 2.5,
-                color: Color(0xFFE50914),
-              ),
-            ),
+            SizedBox(height: 30),
+            CircularProgressIndicator(color: Colors.redAccent),
           ],
         ),
       ),
