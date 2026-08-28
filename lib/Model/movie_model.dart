@@ -6,8 +6,8 @@
 /// vote_average : 7.3
 /// vote_count : 387
 
-class MovieService {
-  MovieService({
+class MovieModel {
+  MovieModel({
       String? title, 
       String? releaseDate, 
       String? originalLanguage, 
@@ -24,7 +24,7 @@ class MovieService {
     _voteCount = voteCount;
 }
 
-  MovieService.fromJson(dynamic json) {
+  MovieModel.fromJson(dynamic json) {
     _title = json['title'];
     _releaseDate = json['release_date'];
     _originalLanguage = json['original_language'];
@@ -40,14 +40,14 @@ class MovieService {
   String? _overview;
   num? _voteAverage;
   num? _voteCount;
-MovieService copyWith({  String? title,
+MovieModel copyWith({  String? title,
   String? releaseDate,
   String? originalLanguage,
   num? popularity,
   String? overview,
   num? voteAverage,
   num? voteCount,
-}) => MovieService(  title: title ?? _title,
+}) => MovieModel(  title: title ?? _title,
   releaseDate: releaseDate ?? _releaseDate,
   originalLanguage: originalLanguage ?? _originalLanguage,
   popularity: popularity ?? _popularity,
